@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Raj Lakshmi | AI in Cybersecurity Portfolio</title>
+  <meta name="description" content="Portfolio of Raj Lakshmi, 2nd-year B.Sc. student — AI in Cybersecurity project: Intelligent Threat Detection & Response." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0e14;         /* deep blue-black */
+      --panel:#11161f;      /* card bg */
+      --muted:#90a4b8;      /* secondary text */
+      --text:#e6eef6;       /* main text */
+      --brand:#6ee7ff;      /* cyan */
+      --brand-2:#a78bfa;    /* purple */
+      --accent:#22c55e;     /* green */
+      --danger:#ef4444;     /* red */
+      --warn:#f59e0b;       /* amber */
+      --ok:#3b82f6;         /* blue */
+      --ring: 0 0 0 3px rgba(102, 204, 255, .25);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial; color:var(--text); background: radial-gradient(1200px 800px at 10% -10%, rgba(103,232,249,.08), transparent 60%), radial-gradient(1000px 600px at 120% 10%, rgba(167,139,250,.09), transparent 60%), var(--bg);
+      line-height:1.6;
+    }
+    a{color:var(--brand)}
+    .container{max-width:1120px; margin:0 auto; padding:0 20px}
+    .nav{
+      position:sticky; top:0; z-index:50; backdrop-filter:saturate(180%) blur(10px); background:rgba(11,14,20,.7); border-bottom:1px solid rgba(255,255,255,.06)
+    }
+    .nav-inner{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
+    .brand{display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.2px}
+    .brand .logo{width:36px; height:36px; border-radius:12px; background:conic-gradient(from 90deg, var(--brand), var(--brand-2), var(--ok)); display:grid; place-items:center; box-shadow:0 10px 25px rgba(0,0,0,.3)}
+    .brand span{font-size:1.05rem}
+    .nav ul{display:flex; gap:18px; list-style:none; padding:0; margin:0; flex-wrap:wrap}
+    .nav a{padding:8px 12px; border-radius:12px; text-decoration:none; color:var(--text); opacity:.9}
+    .nav a:hover{background:rgba(255,255,255,.05); opacity:1}
+    .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.09); background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); color:var(--text); text-decoration:none; cursor:pointer}
+    .btn:hover{box-shadow:var(--ring)}
+
+    .hero{padding:72px 0 36px}
+    .hero-grid{display:grid; grid-template-columns: 1.2fr .8fr; gap:32px}
+    .badge{display:inline-flex; align-items:center; gap:8px; font-size:.85rem; color:var(--muted); padding:8px 12px; border:1px solid rgba(255,255,255,.1); border-radius:999px; background:rgba(255,255,255,.03)}
+    .h1{font-size:clamp(28px,4.5vw,48px); line-height:1.15; margin:14px 0 8px; font-weight:800}
+    .muted{color:var(--muted)}
+    .stat-row{display:flex; gap:12px; flex-wrap:wrap; margin-top:16px}
+    .stat{flex:1 1 160px; background:var(--panel); border:1px solid rgba(255,255,255,.07); padding:16px; border-radius:16px}
+    .stat .num{font-weight:800; font-size:1.25rem}
+
+    .card{background:var(--panel); border:1px solid rgba(255,255,255,.07); border-radius:16px; padding:22px}
+    .section{padding:28px 0}
+    .section h2{font-size:1.6rem; margin:0 0 12px}
+    .grid{display:grid; gap:16px}
+    .grid-2{grid-template-columns: repeat(2, minmax(0,1fr))}
+    .grid-3{grid-template-columns: repeat(3, minmax(0,1fr))}
+    .kpi{display:flex; align-items:center; justify-content:space-between; background:rgba(255,255,255,.03); border:1px dashed rgba(255,255,255,.08); border-radius:14px; padding:12px 14px}
+    .progress{height:10px; background:rgba(255,255,255,.08); border-radius:999px; overflow:hidden; margin-top:8px}
+    .progress > span{display:block; height:100%; background:linear-gradient(90deg, var(--brand), var(--brand-2)); width:0}
+
+    .pill{display:inline-block; padding:8px 10px; border-radius:999px; border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.03); font-size:.9rem}
+    .list{margin:0; padding-left:18px}
+    .list li{margin:6px 0}
+
+    .gallery{display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:12px}
+    .shot{position:relative; overflow:hidden; border-radius:12px; border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.03); aspect-ratio:16/10; display:grid; place-items:center; color:var(--muted)}
+    .shot span{position:absolute; bottom:6px; left:8px; right:8px; font-size:.85rem; color:#c6d3df; background:rgba(0,0,0,.35); padding:6px 8px; border-radius:8px}
+
+    .footer{padding:36px 0 56px; color:var(--muted)}
+    .footer .row{display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap}
+
+    .callout{border-left:4px solid var(--brand); padding:14px 16px; background:rgba(255,255,255,.03); border-radius:10px}
+
+    .cta-bar{display:flex; gap:12px; flex-wrap:wrap; margin-top:16px}
+    .nowrap{white-space:nowrap}
+
+    /* Responsive */
+    @media (max-width: 960px){
+      .hero-grid{grid-template-columns: 1fr}
+      .gallery{grid-template-columns: repeat(2, minmax(0,1fr))}
+      .grid-2{grid-template-columns:1fr}
+      .grid-3{grid-template-columns: repeat(2, minmax(0,1fr))}
+    }
+    @media (max-width: 560px){
+      .nav ul{display:none}
+      .gallery{grid-template-columns: 1fr}
+      .grid-3{grid-template-columns: 1fr}
+    }
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">🔐</div>
+        <span>Raj Lakshmi · AI in Cybersecurity</span>
+      </div>
+      <ul aria-label="Primary Navigation">
+        <li><a href="#about">About</a></li>
+        <li><a href="#project">Project</a></li>
+        <li><a href="#stack">Tech</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#results">Results</a></li>
+        <li><a href="#screenshots">Screenshots</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a class="btn" href="#" onclick="window.print()" title="Print or Save as PDF" aria-label="Print or Save as PDF">🖨️ <span class="nowrap">Save PDF</span></a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero container">
+    <div class="hero-grid">
+      <div>
+        <div class="badge" aria-label="Brief intro">👋 Hi, I'm <strong style="color:#fff">Raj Lakshmi</strong> · 2nd‑year B.Sc.</div>
+        <h1 class="h1">AI in Cybersecurity — Intelligent Threat Detection & Response</h1>
+        <p class="muted">A student project showcasing how Machine Learning can detect anomalies, classify phishing URLs, and help security teams respond faster — with transparency and ethics in mind.</p>
+        <div class="cta-bar">
+          <a class="btn" href="#project">📌 View Project</a>
+          <a class="btn" href="#contact">🤝 Hire / Collaborate</a>
+          <a class="btn" href="https://github.com/USERNAME/ai-cybersecurity" target="_blank" rel="noopener" aria-label="GitHub Repository">💻 GitHub</a>
+        </div>
+        <div class="stat-row">
+          <div class="stat"><div class="num">3</div><div class="muted">Models (Anomaly, URL, IDS)</div></div>
+          <div class="stat"><div class="num">Flask</div><div class="muted">Live Demo Backend</div></div>
+          <div class="stat"><div class="num">Ethical</div><div class="muted">Privacy by Design</div></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3 style="margin:0 0 8px">Quick Facts</h3>
+        <ul class="list" aria-label="Quick facts">
+          <li><strong>Role:</strong> ML Student Engineer</li>
+          <li><strong>Duration:</strong> Jan – Apr 2025</li>
+          <li><strong>Methods:</strong> Anomaly Detection, URL Classification, Explainable AI</li>
+          <li><strong>Data:</strong> Network flows (Zeek), phishing URL datasets, simulated logs</li>
+        </ul>
+        <div class="callout" style="margin-top:12px">
+          <strong>Goal:</strong> Detect suspicious activity in near‑real time and explain <em>why</em> the model flagged it, so analysts can trust the output.
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="card">
+        <h2>About Me</h2>
+        <p>I’m <strong>Raj Lakshmi</strong>, a <strong>second‑year B.Sc.</strong> student passionate about cybersecurity and applied machine learning. I enjoy building end‑to‑end projects — from data pipelines to deployable apps — and turning complex ideas into clear, secure solutions.</p>
+      </div>
+    </section>
+
+    <!-- PROJECT OVERVIEW & PROBLEM STATEMENT -->
+    <section id="project" class="section">
+      <div class="grid grid-2">
+        <div class="card">
+          <h2>Problem Statement</h2>
+          <p>Modern networks generate massive volumes of logs and traffic. Traditional rule‑based systems miss <em>novel</em> attacks and overwhelm analysts with false positives. The challenge is to build an AI‑assisted system that <strong>detects anomalies and phishing attempts</strong> accurately, <strong>explains</strong> its decisions, and <strong>integrates</strong> smoothly with security operations.</p>
+        </div>
+        <div class="card">
+          <h2>Project Overview</h2>
+          <p>An ML pipeline that ingests network flow features and URL data, trains models for <strong>anomaly detection</strong> (e.g., Isolation Forest), <strong>URL phishing classification</strong> (e.g., Gradient Boosting/Neural Net), and exposes a <strong>Flask</strong> API powering a minimalist dashboard for security analysts.</p>
+        </div>
+      </div>
+      <div class="grid grid-2" style="margin-top:16px">
+        <div class="card">
+          <h2>End Users</h2>
+          <ul class="list">
+            <li><strong>Security Analysts (SOC):</strong> Investigate alerts with context and explanations.</li>
+            <li><strong>IT Admins:</strong> Basic visibility into suspicious endpoints and domains.</li>
+            <li><strong>Educators/Students:</strong> Reproducible project to learn ML‑for‑Security.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>Scope & Deliverables</h2>
+          <ul class="list">
+            <li>Data pipeline + feature engineering (flows, URLs)</li>
+            <li>Models with cross‑validation and metrics</li>
+            <li>Explainability (feature importances, SHAP‑style insights)</li>
+            <li>Flask API + dashboard prototype</li>
+            <li>Documentation, ethics checklist, and setup guide</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOOLS & TECHNOLOGIES -->
+    <section id="stack" class="section">
+      <div class="card">
+        <h2>Tools & Technologies</h2>
+        <div class="grid grid-3">
+          <div class="pill">Python · Pandas · NumPy</div>
+          <div class="pill">Scikit‑learn · XGBoost</div>
+          <div class="pill">TensorFlow/Keras (optional)</div>
+          <div class="pill">Flask · REST API</div>
+          <div class="pill">SQLite · CSV</div>
+          <div class="pill">Zeek/Suricata (flow logs)</div>
+          <div class="pill">Wireshark (analysis)</div>
+          <div class="pill">Docker (containerize)</div>
+          <div class="pill">Git & GitHub</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES & FUNCTIONALITY -->
+    <section id="features" class="section">
+      <div class="grid grid-2">
+        <div class="card">
+          <h2>Features & Functionality</h2>
+          <ul class="list">
+            <li><strong>Anomaly Detection:</strong> Isolation Forest on flow features to catch unusual traffic.</li>
+            <li><strong>Phishing URL Classifier:</strong> N‑gram/lexical features + gradient boosting.</li>
+            <li><strong>Real‑time Scoring:</strong> Stream new events via Flask API.</li>
+            <li><strong>Dashboard:</strong> Filterable table of alerts with reasons and confidence.</li>
+            <li><strong>Explainability:</strong> Top features that influenced the decision.</li>
+            <li><strong>Model Monitoring:</strong> Data drift and alert rates over time.</li>
+            <li><strong>Security & Ethics:</strong> Privacy‑preserving features; bias checks.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>Architecture (High‑Level)</h2>
+          <div class="callout">
+            <p><strong>Ingest ➜ Prepare ➜ Train ➜ Evaluate ➜ Serve ➜ Monitor</strong></p>
+            <p class="muted" style="margin:0">A simple pipeline: CSV/Zeek logs → feature engineering → ML models → Flask service → dashboard & metrics.</p>
+          </div>
+          <div style="margin-top:12px">
+            <span class="pill">Batch + Near‑Real‑Time</span>
+            <span class="pill">MLOps‑lite</span>
+            <span class="pill">Reproducible</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESULTS -->
+    <section id="results" class="section">
+      <div class="card">
+        <h2>Results (Replace with your real metrics)</h2>
+        <div class="grid grid-3">
+          <div>
+            <div class="kpi"><strong>Phishing URL Accuracy</strong><span>92% *</span></div>
+            <div class="progress" aria-label="Phishing URL Accuracy"><span style="width:92%"></span></div>
+          </div>
+          <div>
+            <div class="kpi"><strong>Recall (Security‑First)</strong><span>90% *</span></div>
+            <div class="progress" aria-label="Recall"><span style="width:90%"></span></div>
+          </div>
+          <div>
+            <div class="kpi"><strong>ROC‑AUC</strong><span>0.95 *</span></div>
+            <div class="progress" aria-label="ROC-AUC"><span style="width:95%"></span></div>
+          </div>
+        </div>
+        <p class="muted" style="margin-top:8px">* Sample placeholders — update with your cross‑validated results and dataset details.</p>
+      </div>
+    </section>
+
+    <!-- SCREENSHOTS -->
+    <section id="screenshots" class="section">
+      <div class="card">
+        <h2>Results & Screenshots</h2>
+        <div class="gallery" role="list">
+          <figure class="shot" role="listitem" aria-label="Dashboard mock">
+            📊
+            <span>Dashboard — Alerts with explanations</span>
+          </figure>
+          <figure class="shot" role="listitem" aria-label="ROC curve mock">
+            📈
+            <span>ROC Curve — URL Classifier</span>
+          </figure>
+          <figure class="shot" role="listitem" aria-label="Confusion matrix mock">
+            🧮
+            <span>Confusion Matrix — Validation Set</span>
+          </figure>
+        </div>
+        <p class="muted" style="margin-top:10px">Replace these placeholders with your real screenshots (PNG/JPG). Add <code>&lt;img src="/path/to/your.png" alt="..." /&gt;</code> inside each <code>.shot</code>.</p>
+      </div>
+    </section>
+
+    <!-- CONCLUSION -->
+    <section id="conclusion" class="section">
+      <div class="card">
+        <h2>Conclusion</h2>
+        <p>This project demonstrates a practical way to blend ML with security operations. With explainability and careful evaluation, AI can increase detection coverage and reduce alert fatigue. Next steps: expand datasets, add active learning, and integrate with SIEM tools.</p>
+      </div>
+    </section>
+
+    <!-- CONTACT / GITHUB -->
+    <section id="contact" class="section">
+      <div class="grid grid-2">
+        <div class="card">
+          <h2>Contact</h2>
+          <p>Email: <a href="mailto:raj.lakshmi@example.com">raj.lakshmi@example.com</a></p>
+          <p>LinkedIn: <a href="#" target="_blank" rel="noopener">linkedin.com/in/raj-lakshmi</a></p>
+          <p>Location: India · Open to internships and research collaborations.</p>
+        </div>
+        <div class="card">
+          <h2>GitHub Link</h2>
+          <p>Repository: <a href="https://github.com/USERNAME/ai-cybersecurity" target="_blank" rel="noopener">github.com/USERNAME/ai-cybersecurity</a></p>
+          <div class="callout">
+            <strong>Tip:</strong> Include a clean README with setup steps, datasets, metrics tables, and demo GIFs.
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container row">
+      <div>© <span id="year"></span> Raj Lakshmi · AI in Cybersecurity</div>
+      <div>Built with semantic HTML, accessible contrast, and responsive CSS.</div>
+    </div>
+  </footer>
+
+  <script>
+    // Set year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
